@@ -24,6 +24,8 @@ h1 {
     color: white;
     margin-bottom: 5px;
     padding-bottom: 0px;
+    margin-top: 0;
+    font-size: 1.5em;
 }
 
 main, form {
@@ -52,7 +54,7 @@ h2 {
     width: 200px;
     height: 100px;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     color: rgb(13, 59, 31);
     font-weight: bold;
     font-size: 1.5em;
@@ -73,43 +75,39 @@ h2 {
     justify-content: space-between;
     border-top : 3px solid rgb(69, 33, 199);
     border-bottom : 3px solid rgb(69, 33, 199);
+    padding: 0;
 }
 
 .stats {
-    font-weight: bold;
-    font-size: 1.5em;
-    padding: 5px;
+    font-size: 1em;
     margin: 0;
+    padding: 2px;
+}
+
+.heading2, .question {
+    font-size: 1em;
+    margin: 5px;
+    padding:0px;
 }
 
 .answer {
     display: flex;
     align-items: center;
     border: 1px solid black;
-    margin: 10px;
+    margin: 5px;
     width: 100%;
     background-image: linear-gradient(#115D0E, rgb(13, 59, 31));
-    font-size: 1.1em;
+    font-size: .8em;
     opacity: .9;
     transition: all 0.3s ease-in-out;
     border-radius: 10px;
     cursor: pointer;
-}
-
-.label-div {
-    display: flex;
-    align-items: center;
-    height: 115px;
+    height: 75px;
 }
 
 label {
     padding-right: 10px;
     cursor: pointer;
-}
-
-.radio-button {
-    flex: 0 0 30px;
-    text-align: center;
 }
 
 input:focus{
@@ -134,7 +132,13 @@ input {
 }
 
 @media screen and (min-width: 768px) {
+    h1, .stats, .heading2, .question{
+        font-size: 2em;
+        margin: 10px 0 10px 0;
+    }
+    
     .answer {
-        height: 75px;
+        height: 50px;
+        font-size: 1em;
     }
 }

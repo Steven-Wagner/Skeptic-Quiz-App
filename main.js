@@ -108,7 +108,7 @@ function askNextQuestion (questionIndex) {
         <p class = "stats">Score: ${score}</p>
         </div>
         <div>
-            <h2>${STORE[questionIndex].question}</h2>
+            <h2 class="question">${STORE[questionIndex].question}</h2>
         </div>
         <form>
             ${newChoices}
@@ -125,12 +125,8 @@ function getChoicesInHTML (questionIndex) {
     for (let i=0; i<4; i++) {
         questionChoices.push(
             `<div class="answer">
-                <div class = "radio-button">
-                    <input type = "radio" name="choice" value = "${STORE[questionIndex].choices[i]}" id = "choice${i}" required>
-                </div>
-                <div class = "label-div">
-                    <label for="choice${i}">${STORE[questionIndex].choices[i]}</label>
-                </div>
+                <input type = "radio" name="choice" value = "${STORE[questionIndex].choices[i]}" id = "choice${i}" required>
+                <label for="choice${i}">${STORE[questionIndex].choices[i]}</label>
             </div>`
         )
     }
@@ -183,8 +179,8 @@ function correctFeedback (answerSelect) {
     console.log(`runRightFeedback`);
     $(`input[value="${answerSelect}"]`).prop('checked', true);
     $('input:checked').closest('.answer').addClass('correct');
-    $('h2').html(`You're right!<br>The Correct Answer Was:<br><br>
-    ${STORE[questionIndex].answer}`);
+    $('.heading2').html(`<h2>You're right!<br>The Correct Answer Was:<br><br>
+    ${STORE[questionIndex].answer}</h2`);
     $('div').last().html(`<input class = "next" type = "button" value="Next Question"></input>`);
 }
 
@@ -192,8 +188,8 @@ function wrongFeedback (answerSelect) {
     console.log(`runWrongFeedback`);
     $(`input[value="${answerSelect}"]`).prop('checked', true);
     $('input:checked').closest('.answer').addClass('wrong');
-    $('h2').html(`You're wrong!<br>The Correct Answer Was:<br><br>
-    ${STORE[questionIndex].answer}`);
+    $('.heading2').html(`<h2>You're wrong!<br>The Correct Answer Was:<br><br>
+    ${STORE[questionIndex].answer}</h2>`);
     $('div').last().html(`<input class = "next" type = "button" value="Next Question"></input>`);
 }
 
